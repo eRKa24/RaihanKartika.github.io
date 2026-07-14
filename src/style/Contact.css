@@ -1,0 +1,104 @@
+.contact {
+  width: 100%;
+  padding: 120px 8%;
+  background: #111827;
+  color: white;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.contact .section-label {
+  margin-bottom: 15px;
+}
+
+.contact h2 {
+  margin-bottom: 24px;
+
+  font-size: clamp(38px, 6vw, 64px);
+  line-height: 1.15;
+}
+
+.contact-description {
+  max-width: 700px;
+  margin: 0 auto 38px;
+
+  color: #cbd5e1;
+
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.contact-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 16px;
+}
+
+.contact-actions a {
+  min-width: 150px;
+  padding: 13px 25px;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.contact-actions a:hover {
+  transform: translateY(-3px);
+}
+
+.contact-primary {
+  background: #38bdf8;
+  border: 1px solid #38bdf8;
+
+  color: #0f172a;
+}
+
+.contact-primary:hover {
+  background: #7dd3fc;
+  border-color: #7dd3fc;
+}
+
+.contact-secondary {
+  background: transparent;
+  border: 1px solid #475569;
+
+  color: white;
+}
+
+.contact-secondary:hover {
+  color: #38bdf8;
+  border-color: #38bdf8;
+}
+
+@media (max-width: 600px) {
+  .contact {
+    padding: 90px 6%;
+  }
+
+  .contact-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-actions a {
+    width: 100%;
+  }
+}
