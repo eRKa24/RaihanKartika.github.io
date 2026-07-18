@@ -1,3 +1,5 @@
+const BASE = import.meta.env.BASE_URL;
+
 export const projects = [
   {
     id: 1,
@@ -16,21 +18,21 @@ export const projects = [
     ],
 
     slides: [
-      "public/Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-1.png",
-      "public/Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-2.png",
-      "public/Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-3.png",
-      "public/Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-4.png",
-      "public/Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-5.png",
-      "public/Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-6.png",
-      "public/Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-7.png",
-      "public/Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-8.png",
-      "public/Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-9.png",
-      "public/Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-10.png",
-      "public/Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-11.png",
-      "public/Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-12.png",
-      "public/Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-13.png",
-      "public/Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-14.png",
-      "public/Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-16.png", 
+      `${BASE}Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-1.png`,
+      `${BASE}Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-2.png`,
+      `${BASE}Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-3.png`,
+      `${BASE}Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-4.png`,
+      `${BASE}Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-5.png`,
+      `${BASE}Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-6.png`,
+      `${BASE}Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-7.png`,
+      `${BASE}Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-8.png`,
+      `${BASE}Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-9.png`,
+      `${BASE}Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-10.png`,
+      `${BASE}Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-11.png`,
+      `${BASE}Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-12.png`,
+      `${BASE}Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-13.png`,
+      `${BASE}Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-14.png`,
+      `${BASE}Projects/RevoU x Telkom_ Raihan Kartika_Dashboard Report-16.png`,
     ],
   },
 
@@ -52,10 +54,10 @@ export const projects = [
     ],
 
     slides: [
-      "/projects/customer/slide1.png",
-      "/projects/customer/slide2.png",
-      "/projects/customer/slide3.png",
-      "/projects/customer/slide4.png",
+      `${BASE}projects/customer/slide1.png`,
+      `${BASE}projects/customer/slide2.png`,
+      `${BASE}projects/customer/slide3.png`,
+      `${BASE}projects/customer/slide4.png`,
     ],
   },
 
@@ -77,14 +79,14 @@ export const projects = [
     ],
 
     slides: [
-      "public/Projects/GTM Film Industry Tech-1.png",
-      "public/Projects/GTM Film Industry Tech-2.png",
-      "public/Projects/GTM Film Industry Tech-3.png",
-      "public/Projects/GTM Film Industry Tech-4.png",
-      "public/Projects/GTM Film Industry Tech-5.png",
-      "public/Projects/GTM Film Industry Tech-6.png",
-      "public/Projects/GTM Film Industry Tech-7.png",
-      "public/Projects/GTM Film Industry Tech-8.png",
+      `${BASE}Projects/GTM Film Industry Tech-1.png`,
+      `${BASE}Projects/GTM Film Industry Tech-2.png`,
+      `${BASE}Projects/GTM Film Industry Tech-3.png`,
+      `${BASE}Projects/GTM Film Industry Tech-4.png`,
+      `${BASE}Projects/GTM Film Industry Tech-5.png`,
+      `${BASE}Projects/GTM Film Industry Tech-6.png`,
+      `${BASE}Projects/GTM Film Industry Tech-7.png`,
+      `${BASE}Projects/GTM Film Industry Tech-8.png`,
     ],
   },
 ];
