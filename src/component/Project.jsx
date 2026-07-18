@@ -1,118 +1,189 @@
+import { useState } from "react";
 import "../style/Project.css";
+import { projects } from "../data/ProjectData";
 
 function Projects() {
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const handleProjectClick = (project) => {
+    // Click active project again to close it
+    if (selectedProject?.id === project.id) {
+      setSelectedProject(null);
+      setCurrentSlide(0);
+      return;
+    }
+
+    setSelectedProject(project);
+    setCurrentSlide(0);
+  };
+
+  const nextSlide = () => {
+    if (
+      currentSlide <
+      selectedProject.slides.length - 1
+    ) {
+      setCurrentSlide(currentSlide + 1);
+    }
+  };
+
+  const previousSlide = () => {
+    if (currentSlide > 0) {
+      setCurrentSlide(currentSlide - 1);
+    }
+  };
+
   return (
     <section className="projects" id="projects">
+
       <div className="projects-container">
 
         <div className="projects-heading">
-          <p className="section-label">SELECTED WORK</p>
+          <p className="section-label">
+            SELECTED WORK
+          </p>
+
           <h2>Featured Projects</h2>
         </div>
 
-        <div className="projects-grid">
+        <div
+          className={`projects-layout ${
+            selectedProject ? "expanded" : ""
+          }`}
+        >
 
-          <a
-            href="/projects/cpaas-dashboard.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="project-card-link"
-          >
-            <article className="project-card">
-              <p className="project-category">
-                DATA ANALYTICS
-              </p>
+          {/* LEFT SIDE */}
 
-              <h3>CPaaS Performance Dashboard</h3>
+          <div className="projects-grid">
 
-              <p className="project-description">
-                Analyzed multi-channel CPaaS performance across WhatsApp,
-                SMS, Email, and Call services to identify revenue concentration,
-                channel performance, and customer contribution patterns.
-              </p>
+            {projects.map((project) => (
 
-              <div className="project-technologies">
-                <span>SQL</span>
-                <span>BigQuery</span>
-                <span>Python</span>
-                <span>Tableau</span>
+              <article
+                key={project.id}
+                className={`project-card ${
+                  selectedProject?.id === project.id
+                    ? "active"
+                    : ""
+                }`}
+                onClick={() =>
+                  handleProjectClick(project)
+                }
+              >
+
+                <p className="project-category">
+                  {project.category}
+                </p>
+
+                <h3>{project.title}</h3>
+
+                {!selectedProject && (
+                  <>
+                    <p className="project-description">
+                      {project.description}
+                    </p>
+
+                    <div className="project-technologies">
+                      {project.technologies.map(
+                        (tech) => (
+                          <span key={tech}>
+                            {tech}
+                          </span>
+                        )
+                      )}
+                    </div>
+
+                    <p className="project-view">
+                      View Project →
+                    </p>
+                  </>
+                )}
+
+              </article>
+
+            ))}
+
+          </div>
+
+          {/* RIGHT SIDE */}
+
+          {selectedProject && (
+
+            <div className="project-detail">
+
+            <div className="project-header">
+
+              <button
+                className="back-button"
+                onClick={() => {
+                  setSelectedProject(null);
+                  setCurrentSlide(0);
+                }}
+              >
+                Back
+              </button>
+
+              <div className="project-title">
+
+                <p className="project-category">
+                  {selectedProject.category}
+                </p>
+
+                <h2>{selectedProject.title}</h2>
+
               </div>
 
-              <p className="project-view">
-                View Project →
-              </p>
-            </article>
-          </a>
+            </div>
 
+              <img
+                className="slide-image"
+                src={
+                  selectedProject.slides[currentSlide]
+                }
+                alt={`Slide ${
+                  currentSlide + 1
+                }`}
+              />
 
-          <a
-            href="/projects/customer-segmentation.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="project-card-link"
-          >
-            <article className="project-card">
-              <p className="project-category">
-                MACHINE LEARNING
-              </p>
+              <div className="slide-navigation">
 
-              <h3>Customer Segmentation Analysis</h3>
+                <button
+                  onClick={previousSlide}
+                  disabled={currentSlide === 0}
+                >
+                  ← Previous
+                </button>
 
-              <p className="project-description">
-                Developed customer segmentation models using clustering
-                techniques to identify customer behavior patterns and support
-                data-driven business strategies.
-              </p>
+                <span>
 
-              <div className="project-technologies">
-                <span>Python</span>
-                <span>Pandas</span>
-                <span>Scikit-learn</span>
-                <span>K-Means</span>
+                  {currentSlide + 1}
+                  {" / "}
+                  {
+                    selectedProject.slides.length
+                  }
+
+                </span>
+
+                <button
+                  onClick={nextSlide}
+                  disabled={
+                    currentSlide ===
+                    selectedProject.slides.length -
+                      1
+                  }
+                >
+                  Next →
+                </button>
+
               </div>
 
-              <p className="project-view">
-                View Project →
-              </p>
-            </article>
-          </a>
+            </div>
 
-
-          <a
-            href="/projects/film-industry-gtm.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="project-card-link"
-          >
-            <article className="project-card">
-              <p className="project-category">
-                BUSINESS & TECHNOLOGY STRATEGY
-              </p>
-
-              <h3>Indonesian Film Industry GTM Strategy</h3>
-
-              <p className="project-description">
-                Developed a go-to-market strategy for GPU infrastructure
-                services by analyzing industry growth, VFX production
-                challenges, market opportunities, and potential early adopters.
-              </p>
-
-              <div className="project-technologies">
-                <span>Market Research</span>
-                <span>GPU Cloud</span>
-                <span>Data Analysis</span>
-                <span>GTM Strategy</span>
-              </div>
-
-              <p className="project-view">
-                View Project →
-              </p>
-            </article>
-          </a>
+          )}
 
         </div>
 
       </div>
+
     </section>
   );
 }
