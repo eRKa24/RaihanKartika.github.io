@@ -1,8 +1,8 @@
 .contact {
   width: 100%;
   padding: 120px 8%;
-  background: #111827;
-  color: white;
+  background: var(--secondary-bg);
+  color: var(--text);
 }
 
 .contact-container {
@@ -28,7 +28,7 @@
   max-width: 700px;
   margin: 0 auto 38px;
 
-  color: #cbd5e1;
+  color: var(--subtext);
 
   font-size: 17px;
   line-height: 1.8;
@@ -46,7 +46,7 @@
   min-width: 150px;
   padding: 13px 25px;
 
-  border-radius: 8px;
+  border-radius: 12px;
 
   text-decoration: none;
 
@@ -54,10 +54,10 @@
   font-weight: 600;
 
   transition:
-    transform 0.2s ease,
-    background 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
+    transform var(--transition),
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition);
 }
 
 .contact-actions a:hover {
@@ -65,27 +65,27 @@
 }
 
 .contact-primary {
-  background: #38bdf8;
-  border: 1px solid #38bdf8;
+  background: var(--accent);
+  border: 1px solid var(--accent);
 
-  color: #0f172a;
+  color: var(--primary-bg);
 }
 
 .contact-primary:hover {
-  background: #7dd3fc;
-  border-color: #7dd3fc;
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
 }
 
 .contact-secondary {
   background: transparent;
-  border: 1px solid #475569;
+  border: 1px solid var(--border);
 
-  color: white;
+  color: var(--text);
 }
 
 .contact-secondary:hover {
-  color: #38bdf8;
-  border-color: #38bdf8;
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 @media (max-width: 600px) {
