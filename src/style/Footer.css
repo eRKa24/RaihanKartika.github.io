@@ -1,46 +1,27 @@
-.footer {
-  width: 100%;
-  padding: 28px 8%;
+import "../style/Footer.css";
 
-  background: var(--primary-bg);
-  border-top: 1px solid var(--border);
+function Footer() {
+  return (
+    <footer className="footer">
+      <div className="footer-container">
+        <p>© 2026 Raihan Kartika. Built with React.</p>
 
-  color: var(--subtext);
+        <div className="footer-links">
+          <a
+            href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+
+          <a href="#top">
+            Back to Top ↑
+          </a>
+        </div>
+      </div>
+    </footer>
+  );
 }
 
-.footer-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  gap: 20px;
-}
-
-.footer p {
-  font-size: 14px;
-}
-
-.footer a {
-  color: var(--subtext);
-
-  text-decoration: none;
-
-  font-size: 14px;
-
-  transition: color var(--transition);
-}
-
-.footer a:hover {
-  color: var(--accent);
-}
-
-@media (max-width: 600px) {
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-  }
-}
+export default Footer;
