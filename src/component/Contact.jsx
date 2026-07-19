@@ -24,7 +24,9 @@ function Contact() {
           </a>
 
           <a
-            href="#"
+            href="https://www.linkedin.com/in/raihan-kartika-55699a1ba/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="contact-secondary"
           >
             LinkedIn
@@ -36,4 +38,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default Contact; 
