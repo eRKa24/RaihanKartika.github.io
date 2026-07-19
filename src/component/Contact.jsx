@@ -17,7 +17,7 @@ function Contact() {
 
         <div className="contact-actions">
           <a
-            href="mailto:your-email@gmail.com"
+            href="raihankartika@gmail.com"
             className="contact-primary"
           >
             Get In Touch
@@ -27,7 +27,7 @@ function Contact() {
             href="https://www.linkedin.com/in/raihan-kartika-55699a1ba/"
             target="_blank"
             rel="noopener noreferrer"
-            className="contact-secondary"
+            className="ccontact-primary"
           >
             LinkedIn
           </a>
